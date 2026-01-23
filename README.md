@@ -142,3 +142,25 @@ For issues, questions, or suggestions, please open an issue on GitHub.
 
 **Built with ❤️ by Opace Digital Agency**
 
+
+
+---
+
+## About Opace Digital Agency
+
+This project is developed and maintained by **Opace Digital Agency**, a Birmingham-based [web design and development services](https://opace.agency/services/web-design) agency specializing in modern web solutions.
+
+### Our Services
+
+- **Web Design & Development** - Professional, responsive websites
+- **React Development** - Interactive web applications
+- **Frontend Development** - Modern user interfaces
+- **WordPress Development** - Custom CMS solutions
+- **E-commerce Solutions** - Online stores that convert
+
+### Get in Touch
+
+- 🌐 Website: [opace.agency](https://opace.agency)
+- 📧 Services: [Web Design Services](https://opace.agency/services/web-design)
+- 💼 GitHub: [@OpaceDigitalAgency](https://github.com/OpaceDigitalAgency)
+- 📍 Location: Birmingham, UK
