@@ -98,6 +98,19 @@ The built files will be in the `dist` directory.
 
 ## Deployment
 
+### Self-Hosting (Docker - Recommended)
+
+This application can be self-hosted anywhere using Docker:
+
+1. Make sure you have Docker and Docker Compose installed.
+2. Build and run the application:
+   ```bash
+   docker-compose up -d --build
+   ```
+3. Access the application at `http://localhost:3000`.
+
+All projects, assets, comments, and approvals will be saved locally inside a persistent Docker volume (`critique_data`) mapped to `/app/data` inside the container.
+
 ### Netlify
 
 This application is optimised for Netlify deployment:

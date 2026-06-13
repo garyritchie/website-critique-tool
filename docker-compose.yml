@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  website-critique-tool:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: website-critique-tool
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATA_DIR=/app/data
+    volumes:
+      - critique_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  critique_data:
+    driver: local
