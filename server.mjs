@@ -26,13 +26,13 @@ import uploadProject from './netlify/functions/upload-project.mjs';
 import uploadUrl from './netlify/functions/upload-url.mjs';
 
 const app = express();
+app.enable('trust proxy');
 const PORT = process.env.PORT || 3001;
 
 // Bridge Express request/response to web standard Request/Response
 async function handleWebFunction(fn, req, res, params = {}) {
   try {
-    const protocol = req.encrypted ? 'https' : 'http';
-    const url = `${protocol}://${req.get('host')}${req.originalUrl}`;
+    const url = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
     
     const headers = new Headers();
     for (const [key, val] of Object.entries(req.headers)) {
