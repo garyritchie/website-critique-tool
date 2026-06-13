@@ -32,7 +32,16 @@ const PORT = process.env.PORT || 3001;
 // Bridge Express request/response to web standard Request/Response
 async function handleWebFunction(fn, req, res, params = {}) {
   try {
-    const url = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+    let protocol = 'http';
+    const host = req.get('host') || '';
+    if (req.headers['x-forwarded-proto']) {
+      protocol = req.headers['x-forwarded-proto'].split(',')[0].trim();
+    } else if (req.headers['x-forwarded-ssl'] === 'on') {
+      protocol = 'https';
+    } else if (host && !host.includes('localhost') && !host.includes('127.0.0.1') && !host.includes('3001') && !host.includes('3000')) {
+      protocol = 'https';
+    }
+    const url = `${protocol}://${host}${req.originalUrl}`;
     
     const headers = new Headers();
     for (const [key, val] of Object.entries(req.headers)) {
